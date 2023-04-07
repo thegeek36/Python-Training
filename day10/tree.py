@@ -3,6 +3,7 @@ class Node:
         self.data = data
         self.left = None
         self.right = None
+
 def insert(node,data):
     if node is None:
         return Node(data)
@@ -29,6 +30,15 @@ def preorder(root):
         print(str(root.data)+"->",end="")
         preorder(root.left)
         preorder(root.right)
+
+# Find the inorder successor
+def minValueNode(node):
+    current = node
+    # Find the leftmost leaf
+    while(current.left is not None):
+        current = current.left
+    return current
+
 def deleteNode(root,data):
     if root is None:
         return root
@@ -45,18 +55,39 @@ def deleteNode(root,data):
             temp = root.left
             root = None
             return temp
-
+        # Delete the inorder successor
+        # If the node has two children,
+        # place the inorder successor in position of the node to be deleted
+        temp = minValueNode(root.right)
+        root.data = temp.data
+        # Delete the inorder successor
+        root.right = deleteNode(root.right, temp.data)
+    return root
 
 root  = None
+root = insert(root,8)
+root = insert(root,3)
 root = insert(root,10)
-root = insert(root,11)
-root = insert(root,12)
-root = insert(root,13)
+root = insert(root,1)
+root = insert(root,6)
 root = insert(root,14)
-root = insert(root,15)
-root = insert(root,16)
-root = insert(root,17)
-root = insert(root,18)
-root = insert(root,19)
-inorder(root)
+root = insert(root,4)
+root = insert(root,7)
 
+print("InOrder")
+inorder(root)
+print()
+print("PreOrder")
+preorder(root)
+print()
+print("PostOrder")
+postorder(root)
+
+deleteNode(root,8)
+print()
+print("After Deletion")
+print("InOrder")
+inorder(root)
+print()
+print("PreOrder")
+preorder(root)

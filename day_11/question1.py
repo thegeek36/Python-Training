@@ -37,22 +37,6 @@ class Queue:
         for index in range(self.__front, self.__rear+1):
             print(self.__elements[index])
 
-
-'''
-q = Queue(4)
-print("is it full", q.is_full())
-print("is it empty", q.is_empty())
-q.enqueue(100)
-q.display()
-q.enqueue(200)
-q.enqueue(300)
-q.enqueue(400)
-q.display()
-q.enqueue(500)
-q.display()
-print("Element deleted: ", q.dequeue())
-q.display()
-'''
 def check_odd_even(numq,evenq,oddq,size):
     while size>0:
         ele = numq.dequeue()
@@ -61,7 +45,6 @@ def check_odd_even(numq,evenq,oddq,size):
         else:
             oddq.enqueue(ele)
         size -= 1
-    
 
 q = Queue(10)
 q.enqueue(1)
@@ -84,6 +67,3 @@ print("Even Queue")
 evenq.display()
 print("odd Queue")
 oddq.display()
-
-
-

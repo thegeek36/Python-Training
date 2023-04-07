@@ -32,16 +32,16 @@ class LinkedList:
             temp = temp.next
         temp.next = newnode 
         
-    def insert_at_index(self,index):
+    def insert_at_index(self,index,data):
         if self.headval is None:
             print("List has no Element")
             return 
         if index == 0:
-            self.At_Begining(self.headval.data)
+            self.At_Begining(data)
         elif index == self.get_count():
-            self.at_Ending(self.headval.data)
+            self.at_Ending(data)
         else:
-            newnode = Node(self.headval.data)
+            newnode = Node(data)
             newnode.next = self.headval
             self.headval = newnode
 
@@ -102,11 +102,7 @@ class LinkedList:
                 prev = temp
                 temp = next
             self.headval = prev
-    
-    
-
-
-
+'''
 list = LinkedList()
 list.headval = Node("Mon")
 e2 = Node("Tue")
@@ -135,6 +131,30 @@ print("Deleting by value...")
 list.delete_element_by_value("Tue")
 list.listprint()
 print(list.get_count())
+'''
 
+list = LinkedList()
+even_list = LinkedList()
+odd_list = LinkedList()
+list.headval = Node(2)
+e2 = Node(3)
+list.headval.next = e2
+list.insert_at_index(2,4)
+list.insert_at_index(3,5)
+list.insert_at_index(4,6)
+list.insert_at_index(5,7)
+list.insert_at_index(6,8)
+list.listprint()
+temp = list.headval
+while temp.next is not None:
+    if temp.data % 2 == 0:
+        even_list.At_Begining(temp.data)
+    else:
+        odd_list.At_Begining(temp.data)
+    temp = temp.next
+print("Even list")
+even_list.listprint()
+print("odd list")
+odd_list.listprint()
 
     
