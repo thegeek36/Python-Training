@@ -1,0 +1,46 @@
+
+for(int i = n;i>1;i--){
+    //
+}
+    Loop run n times so O(N)
+
+for(int i =0;i<n;i++){}
+for(int j =0;j<n;j++){}
+    Loop run n + n = 2n times so O(2N) = O(N)
+
+for(int i = 1;i<1;i++){
+for(int j = 1;i<n;i++){}
+}
+    Nested loop run n*n times so O(N^2)
+
+for(int i = 1;i<n;i=i*2){}
+the values of i is 1,2,2^2,2^3...2^k
+the loop will run n times and when 2^k > n so it is O(log n)
+
+for(i=0;i<n;i++)//O(n)
+{
+    for(j=1;j<n;j=j*2)//O(log n)
+    {
+
+    }
+}
+
+//O(nlog(n))
+int p = 0
+for(j=1;j<p;j++)
+{
+    p = p+i
+}
+values of i and p are increasing and changing in the loop.
+i = k
+p = 1+2+3+4+5+6+7+8+9...k
+O(n^0.5)
+
+While LOOP:
+
+
+
+
+
+
+
