@@ -1,11 +1,7 @@
 # Python program for Dijkstra's single
 # source shortest path algorithm. The program is
 # for adjacency matrix representation of the graph
-
-# Library for INT_MAX
 import sys
-
-
 class Graph():
 
 	def __init__(self, vertices):
@@ -68,19 +64,16 @@ class Graph():
 
 
 # Driver's code
-if __name__ == "__main__":
-	g = Graph(9)
-	g.graph = [[0, 4, 0, 0, 0, 0, 0, 8, 0],
-			[4, 0, 8, 0, 0, 0, 0, 11, 0],
-			[0, 8, 0, 7, 0, 4, 0, 0, 2],
-			[0, 0, 7, 0, 9, 14, 0, 0, 0],
-			[0, 0, 0, 9, 0, 10, 0, 0, 0],
-			[0, 0, 4, 14, 10, 0, 2, 0, 0],
-			[0, 0, 0, 0, 0, 2, 0, 1, 6],
-			[8, 11, 0, 0, 0, 0, 1, 0, 7],
-			[0, 0, 2, 0, 0, 0, 6, 7, 0]
-			]
+g = Graph(9)
+g.graph = [[0, 4, 0, 0, 0, 0, 0, 8, 0],
+        [4, 0, 8, 0, 0, 0, 0, 11, 0],
+        [0, 8, 0, 7, 0, 4, 0, 0, 2],
+        [0, 0, 7, 0, 9, 14, 0, 0, 0],
+        [0, 0, 0, 9, 0, 10, 0, 0, 0],
+        [0, 0, 4, 14, 10, 0, 2, 0, 0],
+        [0, 0, 0, 0, 0, 2, 0, 1, 6],
+        [8, 11, 0, 0, 0, 0, 1, 0, 7],
+        [0, 0, 2, 0, 0, 0, 6, 7, 0]
+        ]
+g.dijkstra(0)
 
-	g.dijkstra(0)
-
-# This code is contributed by Divyanshu Mehta and Updated by Pranav Singh Sambyal
